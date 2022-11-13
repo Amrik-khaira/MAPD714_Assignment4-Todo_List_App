@@ -13,6 +13,7 @@
 		E1858BFE29208D8B00D7DA7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1858BFC29208D8B00D7DA7D /* Main.storyboard */; };
 		E1858C0029208D8D00D7DA7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1858BFF29208D8D00D7DA7D /* Assets.xcassets */; };
 		E1858C0329208D8D00D7DA7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1858C0129208D8D00D7DA7D /* LaunchScreen.storyboard */; };
+		E1858C0B2920A39E00D7DA7D /* EditToDoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1858C0A2920A39E00D7DA7D /* EditToDoVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E1858BFF29208D8D00D7DA7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1858C0229208D8D00D7DA7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1858C0429208D8D00D7DA7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1858C0A2920A39E00D7DA7D /* EditToDoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditToDoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				E1858BF629208D8B00D7DA7D /* AppDelegate.swift */,
 				E1858BF829208D8B00D7DA7D /* SceneDelegate.swift */,
 				E1858BFA29208D8B00D7DA7D /* ViewController.swift */,
+				E1858C0A2920A39E00D7DA7D /* EditToDoVC.swift */,
 				E1858BFC29208D8B00D7DA7D /* Main.storyboard */,
 				E1858BFF29208D8D00D7DA7D /* Assets.xcassets */,
 				E1858C0129208D8D00D7DA7D /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1858C0B2920A39E00D7DA7D /* EditToDoVC.swift in Sources */,
 				E1858BFB29208D8B00D7DA7D /* ViewController.swift in Sources */,
 				E1858BF729208D8B00D7DA7D /* AppDelegate.swift in Sources */,
 				E1858BF929208D8B00D7DA7D /* SceneDelegate.swift in Sources */,
