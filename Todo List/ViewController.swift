@@ -23,10 +23,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         LoadItems()
     }
 
-    //MARK: - Load default data in dictionary Or reset dictionary on cancel tapped
+    //MARK: - Load default data in dictionary
     func LoadItems()  {
  
-        TodoArr =  [ToDoList.init(shorTitle: "FFFsdvfvfv", longDesc: "fvfvfv  f fv dd vsv fvffd", isComplete: true, isDueDate: false, Date: ""),ToDoList.init(shorTitle: "vbggnhnhhnh", longDesc: "fvfvfv  f fv dd vsv fvffd", isComplete: false, isDueDate: true, Date: "2018-02-01T19:10:04+00:00"),ToDoList.init(shorTitle: "vbggnhnhhnh", longDesc: "fvfvfv  f fv dd vsv fvffd", isComplete: false, isDueDate: false, Date: "2018-02-01T19:10:04+00:00")]
+        TodoArr =  [ToDoList.init(shorTitle: "Task Name", longDesc: "", isComplete: true, isDueDate: false, Date: ""),ToDoList.init(shorTitle: "Another Task Name", longDesc: "", isComplete: false, isDueDate: false, Date: ""),ToDoList.init(shorTitle: "Yet Another Task Name", longDesc: "", isComplete: false, isDueDate: true, Date: "Sunday, November 20,2022")]
         
     }
     
@@ -39,18 +39,24 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
      guard let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath) as? TodoCell else {return UITableViewCell()}
         cell.selectionStyle = .none
         let objTodo = TodoArr[indexPath.row]
-        if objTodo.isComplete ?? true
+        
+        if objTodo.isComplete ?? false
         {
-            let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: objTodo.shorTitle ?? "gg t tyret rb r y")
+            let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: objTodo.shorTitle ?? "")
                 attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSRange(location: 0, length: attributeString.length))
             cell.lblShortTitle.attributedText = attributeString
-            cell.lblLongDes.text = "Compelted"
+            cell.lblLongDes.text = "Completed"
             cell.SwitchTaskState.setOn(false, animated: false)
+            cell.lblShortTitle.textColor = UIColor.black
+            cell.lblLongDes.textColor = UIColor.black
         }
-        else  if objTodo.isDueDate ?? false
+        else if objTodo.isDueDate ?? false
         {
             cell.lblShortTitle.text = objTodo.shorTitle ?? ""
             cell.lblLongDes.text = objTodo.Date  ?? ""
+            cell.SwitchTaskState.setOn(true, animated: false)
+            cell.lblShortTitle.textColor = UIColor.black
+            cell.lblLongDes.textColor = UIColor.black
         }
         else
         {
@@ -58,6 +64,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             cell.lblShortTitle.textColor = UIColor.red
             cell.lblLongDes.textColor = UIColor.red
             cell.lblLongDes.text = "Overdue!"
+            cell.SwitchTaskState.setOn(true, animated: false)
         }
         
         cell.callbackforEditTask = {
@@ -67,18 +74,25 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         }
         return cell
     }
-
+    //MARK: - open Edit Todo List
     func openEditTodoList(index:IndexPath)  {
        if let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "EditToDoVC") as? EditToDoVC
         {
         vc.Index = index
         vc.toDoDict = TodoArr[index.row]
         vc.callbackforUpdateTodo = {
-           (dict,indexval) in
+           (dict,indexval, isdelete) in
+            if isdelete
+            {
+                self.TodoArr.remove(at: indexval.row)
+                self.tblViwShopList.reloadData()
+            }
+            else
+            {
             guard let updatedTask = dict else { return  }
             self.TodoArr[indexval.row] = updatedTask
             self.tblViwShopList.reloadData()
-           
+            }
         }
            
            
