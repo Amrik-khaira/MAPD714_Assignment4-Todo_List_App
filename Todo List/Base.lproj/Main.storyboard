@@ -390,7 +390,9 @@
                                                                             <constraint firstAttribute="height" constant="34.5" id="rmQ-uG-88W"/>
                                                                         </constraints>
                                                                         <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="filled" title="Save"/>
+                                                                        <buttonConfiguration key="configuration" style="filled" title="Save">
+                                                                            <color key="baseBackgroundColor" red="0.090196078431372548" green="0.47843137254901957" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </buttonConfiguration>
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>
@@ -475,7 +477,7 @@
         <image name="back" width="24" height="24"/>
         <image name="edit_Ic" width="32" height="32"/>
         <namedColor name="ThemeColor">
-            <color red="0.36100000143051147" green="0.47099998593330383" blue="0.23100000619888306" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.36078431372549019" green="0.47058823529411764" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

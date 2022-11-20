@@ -1,7 +1,7 @@
 //
 //  ViewController.swift
-//  Author's name : Amrik Singh
-//  StudentID : 301296257
+//  Author's name : Amrik Singh(301296257) and Hafiz Shaikh(301282061)
+//  StudentID :
 //
 //  Todo List app
 //
