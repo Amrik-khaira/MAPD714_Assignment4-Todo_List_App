@@ -52,7 +52,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         }
         else if objTodo.isDueDate ?? false
         {
-            cell.lblShortTitle.text = objTodo.shorTitle ?? ""
+            cell.lblShortTitle.attributedText = NSAttributedString(string: objTodo.shorTitle ?? "")
             cell.lblLongDes.text = objTodo.Date  ?? ""
             cell.SwitchTaskState.setOn(true, animated: false)
             cell.lblShortTitle.textColor = UIColor.black
@@ -60,7 +60,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         }
         else
         {
-            cell.lblShortTitle.text = objTodo.shorTitle ?? ""
+            cell.lblShortTitle.attributedText = NSAttributedString(string: objTodo.shorTitle ?? "")
             cell.lblShortTitle.textColor = UIColor.red
             cell.lblLongDes.textColor = UIColor.red
             cell.lblLongDes.text = "Overdue!"
